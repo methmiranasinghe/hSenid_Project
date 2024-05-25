@@ -1,0 +1,452 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sidebar {
+  background-color: #ffffff;
+  padding: 20px;
+  flex: 1 1 250px;
+  max-width: 200px;
+  justify-content: space-between;
+  background-color: #ffffff;
+}
+
+.sidebar a {
+  display: block;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #383E62;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.sidebar a:hover,
+.sidebar a:active {
+  background-color: #e6f7ff;
+  font-weight: bold;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo img {
+  width: auto;
+  height: 54px;
+}
+.logo span {
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+.user-info {
+  text-align: center;
+  align-items: center;
+  margin: 20px 0;
+}
+.user-info .compnay-name {
+  color: #383E62;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+}
+.menu ul li {
+  margin: 10px 0;
+  cursor: pointer;
+}
+.menu ul li ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 20px;
+}
+.menu ul li ul li {
+  margin: 5px 0;
+}
+
+.footer {
+  margin-top: 20px;
+}
+
+.main-content {
+  flex: 3 1 0;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .header-right {
+  display: flex;
+  align-items: center;
+}
+header .header-right .user-profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 800px;
+}
+header .header-right .username {
+  margin-left: 10px;
+  font-size: 16px;
+}
+header .Add-plan-btn {
+  margin-left: auto;
+  margin-right: 10px;
+  padding: 10px 20px;
+  background-color: #0078d7;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+header .switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 20px;
+}
+header .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+header .switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+header .switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+header .switch input:checked + .slider {
+  background-color: #2196F3;
+}
+header .switch input:checked + .slider:before {
+  transform: translateX(14px);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.modal .modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+.modal .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.modal .close:hover, .modal .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+body.dark-mode .sidebar {
+  background-color: #1e1e1e;
+}
+body.dark-mode .main-content {
+  background-color: #121212;
+}
+body.dark-mode .main-content .header {
+  color: #ffffff;
+}
+body.dark-mode .main-content .plan-info, body.dark-mode .main-content .plan-details {
+  color: #000;
+}
+body.dark-mode .main-content .stat-item {
+  color: rgb(0, 0, 0);
+}
+body.dark-mode .main-content .plan-details {
+  flex: 1;
+  padding: 90px;
+  background-color: #ffffff;
+}
+body.dark-mode .main-content .plan-details .plan-type {
+  color: #000000;
+  font-weight: bold;
+}
+body.dark-mode .modal-content {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+.stats .stat-item {
+  background-color: #ffffff;
+  padding: 20px;
+  flex: 1;
+  margin: 0 10px;
+  border-radius: 3px;
+}
+.stats .stat-item .circle-container {
+  display: flex;
+  align-items: center;
+}
+.stats .stat-item .circle-container .increase {
+  color: green;
+}
+.stats .stat-item .circle-container .decrease {
+  color: red;
+}
+.stats .stat-item .circle-img {
+  width: auto;
+  height: 50px;
+  margin-right: 10px;
+}
+.stats .stat-item .stat-text {
+  margin-right: 10px;
+  color: rgb(0, 0, 0);
+}
+.stats .stat-item .text-container {
+  color: #0078d7;
+  display: block;
+  flex-direction: column;
+}
+.stats .stat-item p {
+  margin: 0;
+}
+.stats .stat-item .user-list {
+  display: flex;
+}
+.stats .stat-item .user-list .user-list-text {
+  font-size: 12px;
+  color: rgb(110, 131, 222);
+  text-decoration: none;
+}
+.stats .stat-item .user-list img {
+  width: auto;
+  margin-right: 5px;
+}
+
+.plans .plan {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  margin: 10px;
+}
+.plans .plan .plan-info {
+  flex: 1;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 2px;
+}
+.plans .plan .plan-info .details {
+  display: flex;
+}
+.plans .plan .plan-info .details .billing-details-1 {
+  margin: 20px;
+}
+.plans .plan .plan-info .details .billing-details-2 {
+  margin: 20px;
+}
+.plans .plan .plan-info .plan-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.plans .plan .plan-info .plan-header .plan-name {
+  flex-grow: 1;
+}
+.plans .plan .plan-info .plan-header button i {
+  pointer-events: none;
+}
+.plans .plan .plan-info .plan-header button {
+  margin-left: 100px;
+}
+.plans .plan .plan-info img {
+  width: 100px;
+}
+.plans .plan .plan-info .features-rectangle {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #f9f9f9;
+  width: 300px;
+}
+.plans .plan .plan-info .features-rectangle .features p {
+  margin: 5px 0;
+}
+.plans .plan .plan-info button {
+  padding: 10px 20px;
+  background-color: #0078d7;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 10px 0;
+}
+.plans .plan .plan-details {
+  display: inline;
+  padding: 90px;
+  flex: 1;
+  background-color: #ffffff;
+  align-items: center;
+  justify-content: center;
+}
+.plans .plan .plan-details .plan-type {
+  color: #000000;
+}
+.plans .plan .plan-details .amount-due p {
+  margin: 5px 0;
+}
+.plans .plan .plan-details .amount-due input {
+  padding: 10px;
+  margin: 10px 0;
+}
+.plans .plan .plan-details .amount-due button {
+  padding: 10px 20px;
+  background-color: #0078d7;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.plans .plan .plan-details .edit-plan i,
+.plans .plan .plan-details .delete-plan i {
+  background-color: rgb(77, 77, 255);
+  color: #ffffff;
+  border: 1px solid black;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 5px;
+  width: 80px;
+  height: 10px;
+}
+.plans .plan .plan-actions {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal .modal-content {
+  background-color: #ffffff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 8px;
+}
+.modal .modal-content .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.modal .modal-content .close:hover, .modal .modal-content .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal .modal-content h2 {
+  margin-top: 0;
+}
+.modal .modal-content form {
+  display: flex;
+  flex-direction: column;
+}
+.modal .modal-content form label {
+  margin: 10px 0 5px;
+}
+.modal .modal-content form input,
+.modal .modal-content form textarea,
+.modal .modal-content form button {
+  padding: 10px;
+  margin: 5px 0;
+}
+.modal .modal-content form button {
+  background-color: #0078d7;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .sidebar {
+    flex: 1 1 100%;
+    max-width: none;
+  }
+  .main-content {
+    flex: 1 1 100%;
+  }
+  .stats {
+    flex-direction: column;
+  }
+  .stats .stat-item {
+    margin: 0px 0;
+  }
+  .plans .plan {
+    flex-direction: column;
+  }
+}/*# sourceMappingURL=styles.css.map */

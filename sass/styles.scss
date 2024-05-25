@@ -1,0 +1,544 @@
+$font-family: "Open Sans", sans-serif;
+$default-font-size: 16px;
+$h2-font-size: 26px;
+$h4-font-size: 18px;
+$primary-color: #0078d7;
+$secondary-color: #f5f5f5;
+$background-color: #ffffff;
+$modal-background: rgba(0, 0, 0, 0.5);
+$profile-img-size: 40px;
+$username-font-size: 16px;
+body {
+  font-family: $font-family;
+  font-size: $default-font-size;
+  margin: 0;
+  padding: 0;
+  background-color: $secondary-color;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sidebar {
+  background-color: $background-color;
+  padding: 20px;
+  flex: 1 1 250px;
+  max-width: 200px;
+  justify-content: space-between;
+  background-color: #ffffff;
+}
+.sidebar a {
+  display: block;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #383E62;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.sidebar a:hover,
+.sidebar a:active {
+  background-color: #e6f7ff;
+ 
+  font-weight: bold;
+}
+.logo {
+  display: flex;
+  align-items: center;
+
+  img {
+    width: auto;
+    height: 54px;
+  }
+
+  span {
+    font-weight: bold;
+    margin-left: 8px;
+  }
+}
+
+.user-info {
+  text-align: center;
+  align-items: center;
+  margin: 20px 0;
+  .compnay-name{
+    color: #383E62;
+  }
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+
+  li {
+    margin: 10px 0;
+    cursor: pointer;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0 20px;
+
+      li {
+        margin: 5px 0;
+      }
+    }
+  }
+}
+
+.footer {
+  margin-top: 20px;
+}
+
+.main-content {
+  flex: 3 1 0;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+ 
+    .header-right {
+      display: flex;
+      align-items: center;
+  
+      
+  
+      .user-profile-img {
+        width: $profile-img-size; 
+        height: $profile-img-size; 
+        border-radius: 50%;
+        margin-left: 800px;
+      }
+  
+      .username {
+        margin-left: 10px;
+        font-size: $username-font-size; 
+      }
+    }
+
+  .Add-plan-btn {
+    margin-left: auto;
+    margin-right: 10px;
+    padding: 10px 20px;
+    background-color: $primary-color;
+    color: $background-color;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+
+    input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 34px;
+
+      &:before {
+        position: absolute;
+        content: "";
+        height: 14px;
+        width: 14px;
+        left: 3px;
+        bottom: 3px;
+        background-color: white;
+        transition: 0.4s;
+        border-radius: 50%;
+      }
+    }
+
+    input:checked+.slider {
+      background-color: #2196F3;
+    }
+
+    input:checked+.slider:before {
+      transform: translateX(14px);
+    }
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+
+    &:hover,
+    &:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+
+  .sidebar {
+    background-color: #1e1e1e;
+  }
+
+  .main-content {
+   
+    background-color: #121212;
+    .header{
+      color: #ffffff;
+    }
+    .plan-info,.plan-details{
+     
+      color: #000;
+    }
+    .stat-item{
+      color: rgb(0, 0, 0);
+    }
+    
+    
+    .plan-details{
+     
+      flex: 1;
+      padding: 90px;
+      background-color: $background-color;
+        
+      .plan-type{
+        color: #000000;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .modal-content {
+    background-color: #ffffff;
+    color: #000000;
+  }
+}
+
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  
+  .stat-item {
+    background-color: $background-color;
+    padding: 20px;
+    flex: 1;
+    margin: 0 10px;
+    border-radius: 3px;
+  
+    .circle-container {
+        display: flex;
+        align-items: center; // Align items vertically center
+
+        .increase{
+          color: green;
+        }
+        .decrease{
+          color: red;
+        }
+      }
+            
+      .circle-img {
+      width: auto; // Adjust size as needed
+      height: 50px; // Adjust size as needed
+      margin-right: 10px; // Add spacing between circle image and text
+      }
+      .stat-text {
+              margin-right: 10px; // Add spacing between circle image and text
+              color: rgb(0, 0, 0);
+      }
+      .text-container {
+        color: #0078d7;
+             display: block;
+              flex-direction: column; // Arrange children vertically
+      }
+    p {
+      margin: 0;
+    }
+
+    .user-list {
+      display: flex;
+      .user-list-text{
+        font-size: 12px;
+        color: rgb(110, 131, 222);
+       
+        text-decoration: none;
+      }
+      img {
+        width: auto;
+        // height: 24px;
+        // border-radius: 50%;
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+.plans {
+  .plan {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    margin: 10px;
+    .plan-info {
+      
+      .details{
+        display: flex;
+        //align-items: center;
+       
+
+        .billing-details-1{
+          margin: 20px;
+        }
+        .billing-details-2 {
+          margin: 20px;
+          
+        }
+      }
+
+      flex: 1;
+      padding: 20px;
+      background-color: $background-color;
+      border-radius: 2px;
+      .plan-header {
+        display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+        .plan-name {
+          flex-grow: 1;
+        }
+        button i {
+          pointer-events: none;
+        }
+        button {
+          margin-left: 100px;
+        }
+      }
+      img {
+        width: 100px;
+      }
+
+      .features-rectangle {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 10px;
+        margin: 10px 0;
+        background-color: #f9f9f9;
+        width: 300px;
+        .features {
+          p {
+            margin: 5px 0;
+          }
+        }
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: $primary-color;
+        color: $background-color;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 10px 0;
+      }
+    }
+
+    .plan-details {
+      
+      display: inline;
+      padding: 90px;
+          .plan-type {
+            color: #000000;
+            
+          }
+        
+      flex: 1;
+      background-color: $background-color;
+      align-items: center;
+      justify-content: center;
+     
+
+      .amount-due {
+        p {
+          margin: 5px 0;
+        }
+
+        input {
+          padding: 10px;
+          margin: 10px 0;
+        }
+
+        button {
+          padding: 10px 20px;
+          background-color: $primary-color;
+          color: $background-color;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+      }
+
+      .edit-plan i,
+      .delete-plan i {
+        background-color: rgb(77, 77, 255);
+        color: $background-color;
+        border: 1px solid black;
+        cursor: pointer;
+        margin-top: 10px;
+        border-radius: 5px;
+        width: 80px;
+        height: 10px;
+      }
+      
+    }
+    .plan-actions {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px; // Space between the buttons
+    }
+  }
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: $modal-background;
+
+  .modal-content {
+    background-color: $background-color;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+
+      &:hover,
+      &:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        margin: 10px 0 5px;
+      }
+
+      input,
+      textarea,
+      button {
+        padding: 10px;
+        margin: 5px 0;
+      }
+
+      button {
+        background-color: $primary-color;
+        color: $background-color;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    flex: 1 1 100%;
+    max-width: none;
+  }
+
+  .main-content {
+    flex: 1 1 100%;
+  }
+
+  .stats {
+    flex-direction: column;
+
+    .stat-item {
+      margin: 0px 0;
+    }
+  }
+
+  .plans {
+    .plan {
+      flex-direction: column;
+    }
+  }
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hSenid Business Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="images/logo.png" alt="PeoplesHR">
+            </div>
+            <div class="user-info">
+                <p>Hello,</p>
+                <p class="compnay-name">ABC COMPANY PVT LTD</p>
+                <hr>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li>Dashboard</li>
+                    <li>Invoices</li>
+                    <li>Business Plans
+                        <br>
+                        <ul>
+                            <li id="plan1"> <a class="links" href="/">Family Plan</a></li>
+                            <li id="plan2"><a class="links" href="/"> Student Plan </a></li>
+                            <li id="plan3"><a class="links" href="/"> Enterprise Plan </a></li>
+                            <li id="plan4"><a class="links" href="/"> Individual Plan</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <br>
+            <div class="footer">
+                <p>Refund Policy</p>
+                <p>Terms of Service</p>
+                <p>Need Help?</p>
+            </div>
+            <br>
+        </aside>
+        <main class="main-content">
+            <header>
+                <h2>Dashboard</h2>
+                <div class="header-right">
+                  
+                     <img src="images/Ellipse 5.png" alt="User Profile" class="user-profile-img" id="userProfileImg">
+                    <span class="username">John Doe</span>
+                    
+                </div>
+               
+               
+                <button id="add-new-plan" class="Add-plan-btn">Add New Plans</button>
+                <label class="switch">
+                    <input type="checkbox" id="darkModeToggle">
+                    <span class="slider"></span>
+                </label>
+            </header>
+            <h4>Package Plans</h4>
+            <p>Dashboard>Business Plan> Family Plan</p>
+            <section class="stats">
+            <div class="stat-item">
+                <div class="circle-container">
+                    <img src="./images/Ellipse.png" alt="Circle Image" class="circle-img">
+                    <span class="stat-text">Total Plans <br> 2500 <p><span class="increase"><i class="fas fa-arrow-up"></i>+16% </span> this month</p></span>
+                    
+                </div>
+               
+            </div>
+                <div class="stat-item">
+                    <div class="circle-container">
+                        <img src="./images/Ellipse.png" alt="Circle Image" class="circle-img">
+                        <span class="stat-text">New Plans <p>150</p>
+                        <p><span class="decrease"><i class="fas fa-arrow-down"></i>-10% </span>this month</p></span>
+                    
+                    </div>
+                    
+                </div>
+                <div class="stat-item">
+                <div class="circle-container">
+                    <img src="./images/Ellipse.png" alt="Circle Image" class="circle-img">
+                    <span class="stat-text">Active Now <p>3215</p>
+                    <div class="user-list">
+                        <img src="./images/users.png" alt="Circle Image" class="circle-img2">
+                        <a href="#" class="user-list-text">View user list</a></span>
+                    </div>
+                    
+                
+                </div>
+                   
+                </div>
+                <div class="stat-item">
+                    <p>Next Payments</p>
+                    <p>$300</p>
+                    <p>Oct 20, 2023</p>
+                </div>
+            </section>
+            <section class="plans" id="plans-section">
+                <!-- Plans dynamically added here -->
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal for adding/editing plans -->
+    <div class="modal" id="plan-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title">Add New Plan</h2>
+            <form id="plan-form">
+                <!-- <label for="plan-name">Plan Name</label>
+                <input type="text" id="plan-name" name="plan-name" required> -->
+                <label for="plan-name">Plan Name</label>
+  <select id="plan-name">
+    <option value="Family Plan">Family Plan</option>
+    <option value="Student Plan">Student Plan</option>
+    <option value="Enterprise Plan">Enterprise Plan</option>
+    <option value="Individual Plan">Individual Plan</option>
+  </select>
+
+                <label for="plan-price">Plan Price</label>
+                <input type="number" id="plan-price" name="plan-price" required>
+
+                <label for="plan-details">Plan Details</label>
+                <textarea id="plan-details" name="plan-details" required></textarea>
+
+                <button type="submit">Save Plan</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
